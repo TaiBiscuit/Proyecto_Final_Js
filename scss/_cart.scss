@@ -1,0 +1,75 @@
+.cart-section{
+    position: fixed;
+    margin: 0 auto;
+    top: 50%;
+    left: 50%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    transform: translate(-50%, -50%);
+
+
+    .cart-model{
+        display: none;
+        position: relative;
+        background-color: white;
+        min-width: 700px;
+        padding: 14px;
+        border-radius: 5px;
+
+        .cart-top{
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid black;
+            margin-bottom: 2rem;
+            
+             .btn-close-cart{
+                margin-right: 10px;
+                margin-bottom: 20px;
+                width: 50px;
+                border: none;
+                border-radius: 15px;
+                padding: 7px;
+                background-color: #af3737;
+                transition: all 0.5s;
+                &:hover{
+                    background-color: #8d2c2c;
+                }
+            }
+        }
+        
+        .lens-mag{
+            width: 30px;
+            height: 30px;
+        }
+
+        .del-btn{
+            float: right;
+            width: 50px;
+            border: none;
+            border-radius: 15px;
+            padding: 7px;
+            margin-bottom: 2rem;
+            background-color: #af3737;
+            transition: all 0.5s;
+            &:hover{
+                background-color: #8d2c2c;
+            }
+        }
+    }
+}
+
+.productoDelCarro{
+
+    border-bottom-left-radius: 3px;
+    border-top-left-radius: 3px;
+    margin: 5px 0;
+    padding: 5px 10px;
+    display: flex;
+    justify-content: space-between;
+    &::before{
+        content: '';
+        border-left: 5px solid rgb(230, 173, 173);
+        height: 20px;
+    }
+}

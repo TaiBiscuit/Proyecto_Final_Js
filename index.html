@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Projecto</title>
+</head>
+<body>
+    <header id="head">
+        <nav class="nav-top">
+            <h1 class="title">Nico Glasses</h1>
+            <span class='notify-bubble' id="notify-bubble">1</span> 
+            <button class="cart-btn" id="cart-btn"><i class="fa fa-shopping-cart fa-2x nav-but"></i></button>
+            
+        </nav>
+    </header>
+    <main>
+        <section class="cart-section">
+            <div class="cart-model" id="cart-model">
+                <div class="cart-top">
+                    <h3>Cart</h3>
+                    <p>Precio total: $<span id=precioTotal></span></p> 
+                    <button class="btn-close-cart" id="btn-close-cart">Close</i></button>
+                </div>
+                <div id="carrito-cont">
+                </div>
+            </div>
+        </section>
+        <section class="welcome">
+            <h2 class="mid-title">Best in the market</h2>
+            <p class="sub-text">Our frames are the best in the market</p>
+            <button class="btn"><a id="links" href="#catalogue">Shop now</a></button>
+        </section>
+        <section class="middle">
+            <h2 class="mid-title">We got it all</h2>
+            <p class="sub-text">From eyeglasses to sunglasses, pick your favourite</p>
+            <button class="btn"><a id="links" href="#catalogue">Shop now</a></button>
+        </section>
+        <section class="offer">
+            <h2 class="mid-title">Want to contact us?</h2>
+            <p class="sub-text">Don't forget to send your info at the bottom!</p>
+        </section>
+        <section class="catalogue" id="catalogue">
+            <div class="container">
+                <div class="search" id="search">
+                    <a href="#" class="search-btn" data-filter="all">ALL</a>
+                    <a href="#" class="search-btn" data-filter="sunglass">Glasses</a>
+                    <a href="#" class="search-btn" data-filter="eyeglass">Sunglasses</a>
+                </div>
+                <div class="main-product" id="main-product">
+                    <div class="catalogue-container" id="catalogue-container">
+                        
+                    </div>
+                </div>
+              </div>
+        </section> 
+        <section class="contact">
+            <h2 class="contact-h">Contact us!</h2>
+            <form id="form">
+                <div class="form-group">
+                    <label id="name-label" for="name">Name</label>
+                    <input id="name" class="form-control" type="text" name="name" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label id="email-label" for="email">Email</label>
+                    <input id="email" class="form-control" type="email" name="email" placeholder="Enter your Email" required>
+                </div>
+                <div class="form-group">
+                    <p>Do you want to add a comment?</p>
+                    <textarea id="comments" class="input-textarea" name="comment" placeholder="Enter your comment here"></textarea>
+                </div>
+                <div class="form-group">
+                    <button id="submit" class="submit-button" type="submit">Submit</button>
+                </div>
+            </form>
+            
+        </section>
+    <footer>
+        <script src="./script/stock.js"></script>
+        <script src="./script/script.js"></script>
+        <script src="./script/cart.js"></script>
+        <script src="./script/index.js"></script>
+    </footer>
+</body>
+</html>
+

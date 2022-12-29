@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Sono&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Sono';
+    min-height: 100%;
+    
+}
+
+
+
+@import "navbar";
+@import "cart";
+@import "welcome";
+@import "middle";
+@import "offer";
+@import "catalogue";
+@import "contact";
+@import "catalogue-container";
+
+
+
+

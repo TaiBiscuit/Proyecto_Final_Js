@@ -1,0 +1,41 @@
+.welcome{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../media/guy-glasses-2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    a{
+        color: black;
+        text-decoration: none;
+    }
+
+    .mid-title{
+        align-self: center;
+        padding-right: 50rem;
+        padding-bottom: 1rem;
+        font-size: 3rem;
+    }
+
+    .sub-text{
+        padding-right: 50rem;
+    }
+
+    .btn{
+        border: none;
+        width: 100px;
+        border-radius: 100px;
+        padding: 0.5rem;
+        margin-top: 2rem;
+        margin-right: 50rem;
+        background-color: #F0B667;
+        transition: all 0.5s;
+        &:hover{
+            background-color: hsl(35, 51%, 46%);
+        }
+    }
+}

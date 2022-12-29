@@ -1,0 +1,86 @@
+.contact{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    .contact-h{
+        margin-top: 100px;
+        text-decoration: underline
+    }
+
+    form{
+        padding:2rem;
+        display:inline-block;
+        
+
+
+        .form-group{
+            margin:0 auto 1.25rem auto;
+            padding: 0.25rem;
+        }
+        
+        .form-control{
+            display:block;
+            width:100%;
+            height:2.4rem;
+            padding:0.39rem 0.78rem;
+            border:1px solid #ced4da;
+            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+        }
+        
+        label{
+            display:flex;
+            align-items:center;
+            font-size:1.2rem;
+            margin-bottom:0.5rem;
+        }
+        
+        input{
+            font-family:inherit;
+            font-size:inherit;
+            margin:0;
+            line-height: inherit;
+        }
+        
+        .input-radio{
+            display:inline-block;
+            margin-right:0.6rem;
+            min-height: 1.25rem;
+            min-width: 1.25rem;
+        }
+        
+        .input-checkbox{
+            display:inline-block;
+            margin-right:0.6rem;
+            min-height: 1.25rem;
+            min-width: 1.25rem;
+        }
+        
+        .input-textarea{
+            min-height:120px;
+            width:100%;
+            resize:vertical;
+            padding:0.6rem;
+            font-family: inherit;
+        }
+        
+        .submit-button{
+            display:block;
+            width:100%;
+            padding:0.8rem;
+            color: white;
+            background: #F0B667;
+            border-radius:2px;
+            cursor:pointer;
+            border:none;
+            transition: all 0.5s;
+
+            &:hover{
+                background: hsl(35, 51%, 46%);
+            }
+        }
+    }
+    
+    
+}
