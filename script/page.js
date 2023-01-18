@@ -1,12 +1,20 @@
+// Conseguir la data
+
+const conseguirData = async () =>{
+    const data = await stockController() 
+    mostrarProductos(data)
+}
 
 
 
 // Catálogo en HTML
 
-const mostrarProductos = () => {
+const mostrarProductos = (data) => {
     const contenedor = document.getElementById('catalogue-container');
+    
+    contenedor.innerHTML = '';                                              // Para que al ordenar por valor no se repita
 
-    productos.forEach(producto => {
+    data.forEach(producto => {
         const div = document.createElement('div');
         div.classList.add('card');                                                 
         div.classList.add(`${producto.tipo}`);
@@ -25,7 +33,50 @@ const mostrarProductos = () => {
 
     contenedor.appendChild(div)
     })
+
+
+
+// Orden segun la etiqueta Select 
+
+    const sortSel = document.getElementById('sorting');
+    let sortTexto = 'Auto';
+
+    sortSel.addEventListener('change', function() {
+        sortTexto = sortSel.options[sortSel.selectedIndex].text;
+
+        cambiarSort(data, sortTexto)
+
+        
+    })
 }
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// Filtrado por precio
+
+function cambiarSort (data, sortTexto){
+
+    let dataSort = []
+
+    switch(sortTexto){
+        case 'Cheapest':
+            dataSort = data.sort((a, b) => a.precio - b.precio)
+            mostrarProductos(dataSort)
+        break;
+        case 'Expensive':
+            dataSort = data.sort((a, b) => b.precio - a.precio)
+            mostrarProductos(dataSort)
+        break;
+        case 'Auto':
+            dataSort = data.sort((a, b) => a.id - b.id)
+            mostrarProductos(dataSort)
+        break;
+    }
+}
+
+
 
 
 
@@ -43,7 +94,8 @@ formulario.addEventListener('submit', (e) => {
     vaciarFormulario()
 })
 
-vaciarFormulario = () =>{
+
+const vaciarFormulario = () =>{
     nombreFormulario.value = '';
     emailFormulario.value = '';
     comentarioFormulario.value = '';

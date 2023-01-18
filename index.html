@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <title>Projecto</title>
 </head>
 <body>
@@ -14,7 +15,6 @@
             <h1 class="title">Nico Glasses</h1>
             <span class='notify-bubble' id="notify-bubble">1</span> 
             <button class="cart-btn" id="cart-btn"><i class="fa fa-shopping-cart fa-2x nav-but"></i></button>
-            
         </nav>
     </header>
     <main>
@@ -22,11 +22,29 @@
             <div class="cart-model" id="cart-model">
                 <div class="cart-top">
                     <h3>Cart</h3>
-                    <p>Precio total: $<span id=precioTotal></span></p> 
+                    <p>Total Price: $<span id=precioTotal></span></p> 
+                    <div class="blueFBox">
+                        <label>Blue Filter: </label>
+                        <input type="checkbox" id="blueF" class="blueF">
+                    </div>
                     <button class="btn-close-cart" id="btn-close-cart">Close</i></button>
                 </div>
                 <div id="carrito-cont">
                 </div>
+                <button class="btn-go-ticket" id="btn-go-ticket">Go to ticket</i></button>
+            </div>
+            <div id="final-ticket" class="final-ticket">
+                <div id="ticket-container" class="ticket-container">
+                    <div class="ticket-names">
+                        <p>aaa</p>
+                    </div>
+                    <div class="ticket-prices">
+                        <p>111</p>
+                    </div>
+                </div>
+                <button class="btn-buy" id="btn-buy">Buy</i></button>
+                <button class="btn-close-ticket" id="btn-close-ticket">Close</i></button>
+                
             </div>
         </section>
         <section class="welcome">
@@ -51,8 +69,13 @@
                     <a href="#" class="search-btn" data-filter="eyeglass">Sunglasses</a>
                 </div>
                 <div class="main-product" id="main-product">
-                    <div class="catalogue-container" id="catalogue-container">
-                        
+                    <label for="sorting" class="filter">Sort items by: </label>
+                    <select id="sorting">
+                        <option value="auto">Auto</option>
+                        <option value="min">Cheapest</option>
+                        <option value="max">Expensive</option>
+                    </select>
+                    <div class="catalogue-container" id="catalogue-container">    
                     </div>
                 </div>
               </div>
@@ -80,10 +103,11 @@
         </section>
     <footer>
         <script src="./script/stock.js"></script>
-        <script src="./script/script.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+        <script src="./script/page.js"></script>
         <script src="./script/cart.js"></script>
+        <script src="./script/stockControllers.js"></script>
         <script src="./script/index.js"></script>
     </footer>
 </body>
 </html>
-

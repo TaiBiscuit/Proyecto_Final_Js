@@ -6,6 +6,7 @@ const productos = [
         descripcion: 'placeholder',
         precio: '90',
         img: './media/lentes.png',
+        front: './media/front.jpg',
         cantidad: 0,
     },
 
@@ -16,6 +17,7 @@ const productos = [
         descripcion: 'placeholder',
         precio: '90',
         img: './media/lentes.png',
+        front: './media/front.jpg',
         cantidad: 0,
     },
 
@@ -26,6 +28,7 @@ const productos = [
         descripcion: 'placeholder',
         precio: '140',
         img: './media/lentes.png',
+        front: './media/front.jpg',
         cantidad: 0,
     },
 
@@ -34,8 +37,9 @@ const productos = [
         nombre: 'Crane',
         tipo: 'eyeglass',
         descripcion: 'placeholder',
-        precio: '150',
+        precio: '120',
         img: './media/lentes.png',
+        front: './media/front.jpg',
         cantidad: 0,
     },
 
@@ -46,6 +50,7 @@ const productos = [
         descripcion: 'placeholder',
         precio: '150',
         img: './media/lentes.png',
+        front: './media/front.jpg',
         cantidad: 0,
     },
 
@@ -56,6 +61,7 @@ const productos = [
         descripcion: 'placeholder',
         precio: '145',
         img: './media/lentesdesol.png',
+        front: './media/front-2.jpg',
         cantidad: 0,
     },
 
@@ -66,6 +72,7 @@ const productos = [
         descripcion: 'placeholder',
         precio: '100',
         img: './media/lentesdesol.png',
+        front: './media/front-2.jpg',
         cantidad: 0,
     },
 
@@ -76,6 +83,7 @@ const productos = [
         descripcion: 'placeholder',
         precio: '140',
         img: './media/lentesdesol.png',
+        front: './media/front-2.jpg',
         cantidad: 0,
     },
 
@@ -86,6 +94,7 @@ const productos = [
         descripcion: 'placeholder',
         precio: '100',
         img: './media/lentesdesol.png',
+        front: './media/front-2.jpg',
         cantidad: 0,
     },
 ]

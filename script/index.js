@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    mostrarProductos();
+    conseguirData();
     filtrarProductos('all');            //Comienza el filtrado mostrando todo
 
     if (localStorage.getItem('carro')) {

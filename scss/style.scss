@@ -6,9 +6,14 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body{
     font-family: 'Sono';
     min-height: 100%;
+
     
 }
 
@@ -22,7 +27,7 @@ body{
 @import "catalogue";
 @import "contact";
 @import "catalogue-container";
-
+@import "queries";
 
 
 

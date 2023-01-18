@@ -1,0 +1,150 @@
+@media only screen and (max-width:1245px) {
+    .html, body{
+        overflow-x: hidden;
+    }
+    
+    .welcome{
+        .mid-title, .sub-text{
+            padding-right: 40rem;
+        }
+
+        .mid-title{
+            font-size: 45px;
+        }
+
+        .btn{
+            margin-right: 40rem;
+        }
+
+    }
+    
+    .middle{
+        .mid-title{
+            font-size: 45px;
+        }
+
+        .sub-text{
+            font-size: 13px;
+        }
+    }
+    
+    
+    
+    .catalogue{
+        .search{
+            padding-right: 30px;
+            .search-btn{
+                width: 100%;
+                height: 40px;
+                padding-right: 10px;
+                
+            }
+        }
+    }
+}
+
+@media only screen and (max-width:420px) {
+    .html, body{
+        overflow-x: hidden;
+        border: 1px solid red !important;
+    }
+
+    .welcome{
+        height: 50vh;
+        .mid-title, .sub-text{
+            padding: 0;
+        }
+
+        .mid-title{
+            font-size: 32px;
+        }
+
+        .sub-text{
+            font-size: 13px;
+        }
+
+        .btn{
+            margin: 0;
+        }
+    }
+
+    .cart-section{
+
+        .cart-model{
+            min-width: 350px;
+
+            .cart-top{
+                font-size: 14px;
+
+                h3{
+                    display: none;
+                }
+            }
+        }
+    }
+
+    .middle{
+
+        height: 50vh;
+        background-image: none;
+
+        .mid-title, .sub-text{
+            padding-left: 0;
+        }
+        
+        .btn{
+            margin-left: 0;
+        }
+    }
+
+    .catalogue{
+        padding: 0;
+
+        .search{
+            padding-right: 0;
+        }
+
+        .main-product{
+            padding-left: 2rem;
+
+            label{
+                margin: 1rem 0rem 0rem 0rem;
+            }
+
+            select{
+                margin-bottom: 1rem;
+            }
+
+            .card{
+
+                .card-image{
+
+                    .card-title{
+                        font-size: 20px;
+                    }
+
+                    img{
+                        width: 147px;
+                        height: 147px;
+                    }
+                }
+            }
+
+        }
+
+        .container{
+            .catalogue-container{
+                display: grid;
+                grid-auto-columns: 1fr;
+                grid-template-columns: 1fr;
+                grid-template-rows: 1fr;
+                gap: 1px 0px;
+                grid-template-areas:
+                    "."
+                    "."
+                    ".";
+            }
+    
+        }
+    }
+}

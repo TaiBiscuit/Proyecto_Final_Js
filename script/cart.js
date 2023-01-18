@@ -53,14 +53,27 @@ const modificarElCarro = (producto) =>{
 
     div.innerHTML +=
     `
+    <img class="mini" src="${producto.front}">
     <p>${producto.nombre}</p>
-    <p>Precio: $${producto.precio}</p>
-    <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad} </p>
+    <p>Price: $${producto.precio}</p>
+    <p id=cantidad${producto.id}>Amount: ${producto.cantidad} </p>
     <button class="del-btn eliminar" value="${producto.id}">X</button>
 
     `
 
     contenedorDelCarro.appendChild(div);
+
+    //Notificacion de item agregado al carrito
+
+    Toastify({
+        text: 'The item has been added to the cart',
+        duration: 1500,
+        position: 'right',
+       gravity: 'bottom',
+        style:{
+            background: '#36aa63'
+        }
+    }).showToast();
 };
 
 
@@ -88,6 +101,21 @@ const actualizarTotalCarro = (carro) =>{
 const mostrarTotalCarro = (cantidadTotal, compraTotal) => {
     const burbujaBtn = document.getElementById('cart-btn');
     const precioTotal = document.getElementById('precioTotal');
+    const filtroAzulCheck = document.getElementById('blueF');
+    
+    let filtroPrecio = 0
+
+    filtroAzulCheck.addEventListener('change', () =>{
+
+        if(filtroAzulCheck.checked){
+            filtroPrecio = 200
+
+        } else {
+            filtroPrecio = 0
+        }
+
+        ticketFinal(cantidadTotal, compraTotal, filtroPrecio);
+    })
 
 
     burbuja.style.display = 'block'
@@ -101,7 +129,9 @@ const mostrarTotalCarro = (cantidadTotal, compraTotal) => {
     burbujaBtn.addEventListener('click', () => {
         modeloDeCarro.style.display = 'block';                                                      //Cambia display del contenedor del carrito de 'none' a 'block'
     })
-}
+
+    ticketFinal(cantidadTotal, compraTotal, filtroPrecio);                                                       
+}   
 
 
 
@@ -120,11 +150,24 @@ modeloDeCarro.addEventListener('click', (e) => {
 const eliminarProducto = (productoId) => {
     const productoIndex = carro.findIndex(producto => producto.id == productoId);               //Conseguimos la posicion de el producto a eliminar en el array
     carro.splice(productoIndex, 1); 
-    carroActualizado(carro);
-    actualizarTotalCarro(carro);
+
+
+//Notificacion de eliminado del carrito
+
+Toastify({
+    text: 'The item has been removed to the cart',
+    duration: 1500,
+    position: 'right',
+    gravity: 'bottom',
+    style:{
+        background: '#af3737'
+        }
+}).showToast();
+
+carroActualizado(carro);
+actualizarTotalCarro(carro);
 
 }
-
 
 
 
@@ -142,9 +185,11 @@ const carroActualizado = (carro) => {
         div.classList.add('productoDelCarro');    
         div.innerHTML +=
         `
+        <img class="mini" src="${producto.front}">
         <p>${producto.nombre}</p>
-        <p>Precio: $${producto.precio}</p>
-        <p id=cantidad${producto.id}>Cantidad: ${producto.cantidad} </p>
+        <p>Price: $${producto.precio}</p>
+        <p id=cantidad${producto.id}>Amount: ${producto.cantidad} </p>
+
         <button class="del-btn eliminar" value="${producto.id}">X</button>
     
         `
@@ -166,14 +211,12 @@ btnCerrarCarrito.addEventListener('click', (e) =>{
 })
 
 
-
-//////////////////////////////////////////////////////////////////////////////////////////////
-
 // Guardar carrito
 
 const guardarCarroStorage = (carro) =>{
     localStorage.setItem('carro', JSON.stringify(carro));
 };
+
 
 // Recuperar el carrito
 
@@ -183,3 +226,100 @@ const obtenerCarro = () =>{
 };
 
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// Contenidos pasados al Ticket Final
+
+const ticketFinal = (cantidadTotal, compraTotal, filtroPrecio) => {
+    const ticketFinalCaja = document.getElementById('ticket-container');
+    ticketFinalCaja.innerHTML  = '';
+    const totalConTodo = compraTotal + filtroPrecio;
+
+    const div = document.createElement('div');
+        div.classList.add('item-on-ticket');    
+
+        div.innerHTML +=
+        `
+        <div class="ticket-names">
+        <p>Amount of Items:</p>
+        <p>Item's Price:</p>
+        <p>Filter's Price:</p>
+        <br>
+        <p>Total:</p>
+        </div>
+
+        <div class="ticket-prices">
+        <p>- ${cantidadTotal}</p>
+        <p>$ ${compraTotal}</p>
+        <p>$ ${filtroPrecio}</p>
+        <br>
+        <p>$ ${totalConTodo}</p>
+        </div>
+        `
+        ticketFinalCaja.appendChild(div);
+}
+
+
+
+
+// Activar la pantalla de ticket
+
+const btnIrTicket = document.getElementById('btn-go-ticket');
+const contenedorDeTicket  = document.getElementById('final-ticket');
+
+btnIrTicket.addEventListener('click', (e) =>{
+    e.stopPropagation;
+    contenedorDeTicket.style.display = 'block';
+    modeloDeCarro.style.display = 'none';
+})
+
+
+
+// Comprar vacia el carrito
+
+const btnComprar = document.getElementById('btn-buy');
+
+btnComprar.addEventListener('click', (e) =>{
+    e.stopPropagation;
+    if(carro.length === 0){
+        Toastify({
+            text: "Please select something to buy",
+            className: "info",
+            position: 'center',
+            duration: 2000,
+            style: {
+              background: '#af3737',
+            }
+          }).showToast();
+    } else if(carro.length != 0){
+        carro.length = 0;
+        actualizarTotalCarro(carro);
+        carroActualizado(carro);
+        Toastify({
+            text: "Thank you for your buy",
+            className: "info",
+            position: 'center',
+            duration: 2000,
+            style: {
+              background: '#36aa63',
+            }
+          }).showToast();
+    }
+
+})
+
+
+
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+
+// Cerrar el carrito
+
+const btnCerrarTicket = document.getElementById('btn-close-ticket');
+
+btnCerrarTicket.addEventListener('click', (e) =>{
+    e.stopPropagation;
+    contenedorDeTicket.style.display = 'none';
+})
