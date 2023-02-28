@@ -43,10 +43,34 @@
     }
 }
 
+
+
+@media only screen and (max-width:360px){
+    .catalogue{
+
+        .container{
+            display: inline;
+        }
+
+        .main-product{
+            align-items: center;
+
+            .card{
+
+                .card-image{
+                    display: inline;
+                }
+            }
+        }
+    }
+
+}
+
+
 @media only screen and (max-width:420px) {
     .html, body{
         overflow-x: hidden;
-        border: 1px solid red !important;
+
     }
 
     .welcome{
@@ -87,14 +111,22 @@
 
         height: 50vh;
         background-image: none;
-
+    
         .mid-title, .sub-text{
             padding-left: 0;
+        }
+
+        .sub-text{
+            font-size: 11px;
         }
         
         .btn{
             margin-left: 0;
         }
+    }
+
+    .offer{
+        height: 50vh;
     }
 
     .catalogue{
@@ -118,7 +150,7 @@
             .card{
 
                 .card-image{
-
+                    display: inline;
                     .card-title{
                         font-size: 20px;
                     }
@@ -133,8 +165,8 @@
         }
 
         .container{
+            display: inline;    
             .catalogue-container{
-                display: grid;
                 grid-auto-columns: 1fr;
                 grid-template-columns: 1fr;
                 grid-template-rows: 1fr;
@@ -146,5 +178,7 @@
             }
     
         }
+
+
     }
 }

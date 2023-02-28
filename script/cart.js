@@ -149,7 +149,9 @@ modeloDeCarro.addEventListener('click', (e) => {
 
 const eliminarProducto = (productoId) => {
     const productoIndex = carro.findIndex(producto => producto.id == productoId);               //Conseguimos la posicion de el producto a eliminar en el array
-    carro.splice(productoIndex, 1); 
+    carro[productoIndex].cantidad = 0
+    carro.splice(productoIndex, 1);
+
 
 
 //Notificacion de eliminado del carrito
